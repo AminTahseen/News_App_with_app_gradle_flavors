@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Bookmarks_fragment">
+
+    <TextView
+        android:text="My Bookmarks"
+        android:layout_margin="10dp"
+        android:textSize="20dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_width="match_parent"
+        android:textStyle="bold"
+        android:layout_height="wrap_content"/>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/bookmarkView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:nestedScrollingEnabled="false"
+        tools:listitem="@layout/bookmark_list_item"
+        />
+
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/emptyLayout"
+        android:layout_marginTop="30dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="150dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_baseline_sentiment_very_dissatisfied_24"
+            android:layout_height="150dp"/>
+        <TextView
+            android:text="Oops"
+            android:layout_width="match_parent"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimary"
+            android:layout_height="wrap_content"
+            android:textSize="30dp"/>
+        <TextView
+            android:textAlignment="center"
+            android:text="It Looks Like You Don't have any bookmarks yet."
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#000"
+            android:textSize="15dp"/>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/NestedScrollview"
+    tools:context=".news_list_fragment">
+
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+        <TextView
+            android:text="Latest News"
+            android:layout_margin="10dp"
+            android:textSize="20dp"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_width="match_parent"
+            android:textStyle="bold"
+            android:layout_height="wrap_content"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_margin="10dp"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:padding="10dp"
+                android:id="@+id/searchTag"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:background="@drawable/editext_search"
+                android:hint="Search Keyword..."
+                 />
+            <ImageButton
+                android:id="@+id/searchbtn"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:background="@drawable/rounded_corner"
+                android:padding="10dp"
+                android:layout_marginLeft="5dp"
+                android:src="@drawable/ic_baseline_search_24" />
+        </LinearLayout>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:visibility="gone"
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:nestedScrollingEnabled="false"
+            tools:listitem="@layout/list_item"
+            />
+
+        <ProgressBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            android:visibility="gone"
+            android:indeterminateTintMode="src_atop"
+            android:indeterminateTint="@color/colorPrimary"
+            android:id="@+id/progress"/>
+
+        <LinearLayout
+            android:id="@+id/emptyLayout"
+            android:layout_marginTop="30dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="150dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_baseline_contactless_24"
+                android:layout_height="150dp"/>
+            <TextView
+                android:text="Search"
+                android:layout_width="match_parent"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimary"
+                android:layout_height="wrap_content"
+                android:textSize="30dp"/>
+            <TextView
+                android:textAlignment="center"
+                android:text="Enter Keyword For Latest News"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#000"
+                android:textSize="15dp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>
