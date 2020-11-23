@@ -102,7 +102,7 @@ public class news_list_fragment extends Fragment implements RecyclerInterfaceCli
                     .build();
 
             MainInterface mainInterface=retrofit.create(MainInterface.class);
-            Call<String> call=mainInterface.STRING_CALL(query,page,limit,"a7bca69b62fa4cab9b81c4636dae9155");
+            Call<String> call=mainInterface.STRING_CALL(query,page,limit,"YOUR NEWS API KEY");
             call.enqueue(new Callback<String>() {
                 @Override
                 public void onResponse(Call<String> call, Response<String> response) {
